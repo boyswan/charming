@@ -64,20 +64,20 @@ impl WasmRenderer {
 
 #[derive(Serialize)]
 struct ChartSize {
-    width: u32,
-    height: u32,
+    pub width: u32,
+    pub height: u32,
 }
 
 #[derive(Serialize)]
 pub struct ChartResize {
     /// New width in px
-    width: u32,
+    pub width: u32,
     /// New height in px
-    height: u32,
+    pub height: u32,
     /// If true, emits events on resize
-    silent: bool,
+    pub silent: bool,
     /// Resize animation options
-    animation: Option<Animation>,
+    pub animation: Option<Animation>,
 }
 
 #[derive(Serialize)]
