@@ -147,6 +147,7 @@ impl Animation {
 
 #[wasm_bindgen]
 extern "C" {
+    #[derive(Clone)]
     #[wasm_bindgen(js_name = echarts)]
     pub type Echarts;
 
@@ -154,7 +155,7 @@ extern "C" {
     fn init(id: &web_sys::Element, theme: &str, size: JsValue) -> Echarts;
 
     #[wasm_bindgen(method, js_name = "setOption")]
-    fn set_option(this: &Echarts, option: JsValue);
+    pub fn set_option(this: &Echarts, option: JsValue);
 
     #[wasm_bindgen(method, js_name = "resize")]
     pub fn resize(this: &Echarts, opts: JsValue);
